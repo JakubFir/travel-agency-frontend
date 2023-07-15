@@ -16,7 +16,7 @@ The travel agency frontend provides the following features:
 1. User Authentication: Users can authenticate/login by sending a POST request to `/jwt/login`.
 
 2. Trip Booking: Users can book a trip by sending a POST request to `/book/${userId}` with trip details provided in the request body.
-
+* Trip need to be added through Postman
 3. Retrieve Trips: Users can retrieve a list of trips by sending a GET request to `/trips`.
 
 4. Fetch Flights: Flights for a specific trip and user can be retrieved by sending a POST request to `/flight/${tripId}/${userId}`.
@@ -26,6 +26,7 @@ The travel agency frontend provides the following features:
 6. Fetch Hotels by Coordinates: Hotels can be fetched based on reservation information by sending a POST request to `/hotels`.
 
 7. Subscribe to Newsletter: Users can subscribe to the newsletter by sending a POST request to `/newsletter/${1}`.
+* Newsletter need to be added through Postman
 
 8. User Registration: New users can register by sending a POST request to `/register`.
 
