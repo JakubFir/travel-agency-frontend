@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Getting Started with Travel Agency Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Backend link: [https://github.com/JakubFir/travel-agency](https://github.com/JakubFir/travel-agency)
 
-## Available Scripts
+To run the frontend, please make sure to read the backend readme and have a Docker container of the backend app already set up. Once the backend is ready, you can proceed with building the frontend.
 
-In the project directory, you can run:
+## Building the Frontend:
+1. Change directory to the frontend folder by entering `cd frontend` in the terminal.
+2. Build the frontend image by executing the following command: `docker build -t travel-frontend .` This command will create a frontend image based on the Dockerfile in the current directory.
+3. Run the frontend container in detached mode on port 3000 with the command: `docker run -d -p 3000:3000 -t travel-frontend`.
+4. Once both the backend and frontend containers are running, you can access the main features of the application through the frontend interface at `localhost:3000`.
 
-### `npm start`
+## Available Features:
+The travel agency frontend provides the following features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. User Authentication: Users can authenticate/login by sending a POST request to `/jwt/login`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Trip Booking: Users can book a trip by sending a POST request to `/book/${userId}` with trip details provided in the request body.
 
-### `npm test`
+3. Retrieve Trips: Users can retrieve a list of trips by sending a GET request to `/trips`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Fetch Flights: Flights for a specific trip and user can be retrieved by sending a POST request to `/flight/${tripId}/${userId}`.
 
-### `npm run build`
+5. Fetch Hotels: Hotels for a specific destination can be retrieved by sending a GET request to `/hotels/${destination}`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. Fetch Hotels by Coordinates: Hotels can be fetched based on reservation information by sending a POST request to `/hotels`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. Subscribe to Newsletter: Users can subscribe to the newsletter by sending a POST request to `/newsletter/${1}`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+8. User Registration: New users can register by sending a POST request to `/register`.
 
-### `npm run eject`
+9. Fetch Booked Trips: Users can retrieve their booked trips by sending a GET request to `/book/${userId}`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+10. Fetch User Information: User information can be retrieved by sending a GET request to `/users/${userId}`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Please note that some additional features, such as adding a new trip, creating a newsletter to subscribe to or performing specific actions, may be available through Postman. Please refer to the backend documentation for instructions on how to access and use those features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to reach out if you need any further assistance.
